@@ -52,3 +52,5 @@ Component
 shadow DOM for different stylings
 
 use angular with firebase
+
+2 way data binding- first event is binded then property

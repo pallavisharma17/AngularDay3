@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  todoList: string[];
+  constructor() {
+    this.todoList = [];
+  }
+
+  add(item: string) {
+    this.todoList.push(item);
+    console.log(this.todoList)
+  }
+
+
 }
