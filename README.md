@@ -54,3 +54,15 @@ shadow DOM for different stylings
 use angular with firebase
 
 2 way data binding- first event is binded then property
+
+Class Import Decorate Enhance Repeat
+
+to make a component -
+ng g c <component-name>
+
+@Input-
+1. declare and assign an array inside the parent component
+2. call the child component from the parent component
+3. property bind by using [] the child component with the property of parent
+4. Access the property inside child using @Input Decorator
+5. Bind that array with *ngFor inside the child component

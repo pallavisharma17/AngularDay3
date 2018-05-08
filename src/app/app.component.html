@@ -1,4 +1,4 @@
-<div class="head-section">
+<!-- <div class="head-section">
   <input type="text" placeholder="add item" [(ngModel)]="task">
   <button (click)="add(task)">ADD</button>
   <ul>
@@ -9,4 +9,11 @@
 </div>
 
 <input type="text" [(ngModel)]="name">
-<span [style.color]="name">{{name}}</span>
+<span [style.color]="name">{{name}}</span> -->
+
+<app-todo [todo]="todoList" (event)="update($event)"></app-todo>
+<ul>
+  <li *ngFor="let todo of todoList; let in=index">
+    {{in}}{{todo}}
+  </li>
+</ul>
