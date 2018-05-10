@@ -6,14 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  todoList: string[];
+  // title = 'app';
+  // todoList: string[];
+
+  // constructor() {
+  //   this.todoList = [];
+  // }
+
+  // update(arr) {
+  //   this.todoList = arr;
+  // }
+
+
+  todo: {
+    toDo: string,
+    isChecked: boolean
+  }[] = [];
 
   constructor() {
-    this.todoList = [];
-  }
+    this.todo = [];
+   }
 
   update(arr) {
-    this.todoList = arr;
+    this.todo = arr;
   }
 }

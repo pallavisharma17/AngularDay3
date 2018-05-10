@@ -11,9 +11,17 @@
 <input type="text" [(ngModel)]="name">
 <span [style.color]="name">{{name}}</span> -->
 
-<app-todo [todo]="todoList" (event)="update($event)"></app-todo>
+<!-- <app-todo [todo]="todoList" (event)="update($event)"></app-todo>
 <ul>
   <li *ngFor="let todo of todoList; let in=index">
     {{in}}{{todo}}
   </li>
-</ul>
+</ul> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <app-todo [toDoList]="todo" (event)="update($event)"></app-todo>
+    </div>
+  </div>
+</div>

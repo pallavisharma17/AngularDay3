@@ -1,4 +1,4 @@
-<div class="head-section">
+<!-- <div class="head-section">
   <input type="text" placeholder="add item" [(ngModel)]="task">
   <button (click)="add(task)">ADD</button>
   <ul>
@@ -9,4 +9,57 @@
 </div>
 
 <input type="text" [(ngModel)]="name">
-<span [style.color]="name">{{name}}</span>
+<span [style.color]="name">{{name}}</span> -->
+
+
+<div class="jumbotron" style="padding: 45px 0px">
+  <h4 class="text-center">To Do List App</h4>
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" #itemTitle>
+  <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+    <i class="fa fa-plus-circle fa-2x"></i>
+  </div>
+</div>
+
+<div style="margin:5px 0px">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of toDoListArray">
+
+      <div class="row">
+
+
+        <div class="col-md-5">
+          <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item)">
+            <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+          </span>
+          {{item.toDo}}
+        </div>
+
+        <div class="col-md-1">
+          <span class="hover-cursor text-danger pull-right" (click)="onDelete(item)">
+            <i class="fa fa-trash-o fa-lg"></i>
+          </span>
+        </div>
+
+
+        <!-- .style.display = "block" -->
+
+        <div class="col-md-1">
+          <span class="hover-cursor pull-right text-danger" (click)="editBox.style.display = 'block'">
+            <i class="fa fa-pencil-square-o fa-lg"></i>
+          </span>
+        </div>
+
+        <div class="input-group col-md-5" style="display:none" #editBox>
+          <input type="text" class="form-control" #updateTask>
+          <span class="hover-cursor pull-right" (click)="onUpdate(item,updateTask.value)">
+            <i class="fa fa-pencil-square-o fa-lg"></i>
+          </span>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</div>
